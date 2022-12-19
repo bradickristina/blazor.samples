@@ -1,11 +1,11 @@
 ﻿@page "/0301IfBranch"
 
-<PageTitle>Minimum</PageTitle>
-<h1>Minimum</h1>
+<PageTitle>Calculate</PageTitle>
+<h1>Calculate</h1>
 <p>
 You can try to enter integers, real numbers and texts that are not numbers at all.
 </p>
-<table>
+<table border="1">
     <tr>
         <td>First argument:</td>
         <td><input style="text-align:right" @bind="x"/></td>
@@ -32,10 +32,25 @@ You can try to enter integers, real numbers and texts that are not numbers at al
         <button @onclick="Maximum">Determine Maximum</button> &nbsp;
         </td>
     </tr>
+     <tr>
+        <td style="text-align:center" colspan="2">
+            <button @onclick="avarage">Determine Avarage</button> &nbsp; 
+        <button @onclick="closest">Determine closest number to avg</button> &nbsp;
+        </td>
+    </tr>
     <tr>
+        <td style="text-align:center" colspan="2">
+            <button @onclick="nolower">How many numbers are lower than avarage</button> &nbsp; 
+        <button @onclick="nohigher">>How many numbers are higher than avarage</button> &nbsp;
+        </td>
+    </tr>
+
+    <tr>
+    
         <td>Result:</td>
         <td><input style="text-align:right" @bind="result"/></td>
     </tr>
+    
 </table>
 <br/>
 @code {
@@ -45,9 +60,12 @@ You can try to enter integers, real numbers and texts that are not numbers at al
     private double z = 1.5;
     private double w = 2;
     private double k = 5;
-    private double result;
 
-    private void Minimum()
+    
+    private double result;
+   
+
+ private void Minimum()
     {
         
         double min = x;
@@ -78,4 +96,73 @@ You can try to enter integers, real numbers and texts that are not numbers at al
     result = max;
         
 }
+public void avarage()
+{
+    result= ( x + y + z + w + k)/5; 
+    
 }
+ public void closest() {
+    double avg= ( x + y + z + w + k)/5;
+    double diff=Math.Abs((x + y + z + w + k)/5 - x);
+    double closest = x; 
+    if(Math.Abs(( x + y + z + w + k)/5 - y) <diff)  {
+        closest=y;
+        diff=Math.Abs((x + y + z + w + k)/5 - y);
+    }
+    if(Math.Abs(( x + y + z + w + k)/5 - z) <diff) {
+        closest=z;
+        diff=Math.Abs((x + y + z + w + k)/5 - z);
+    }
+    if ( Math.Abs(( x + y + z + w + k)/5 - w) <diff) {
+        closest=w;
+        diff=Math.Abs((x + y + z + w + k)/5 - w);
+    }
+    if( Math.Abs(( x + y + z + w + k)/5 - k)< diff) {
+        closest=k;
+        
+    }
+    result= closest;
+     }
+public void nolower() {
+double avg= ( x + y + z + w + k)/5;
+int nolower= 0;
+if(x<avg)
+nolower++;
+if(y<avg)
+nolower++;
+if(z<avg)
+nolower++;
+if(w<avg)
+nolower++;
+if(k<avg)
+nolower++;
+result=nolower;
+}
+public void nohigher() {
+double avg= ( x + y + z + w + k)/5;
+int nohigher= 0;
+if(x>avg)
+nohigher++;
+if(y>avg)
+nohigher++;
+if(z>avg)
+nohigher++;
+if(w>avg)
+nohigher++;
+if(k>avg)
+nohigher++;
+result=nohigher;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+ 
