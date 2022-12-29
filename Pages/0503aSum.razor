@@ -1,0 +1,96 @@
+﻿@page "/0503aSum"
+@using DSS.Helpers;
+
+<PageTitle>Sum</PageTitle>
+<h1> Sum </h1>
+<br/>
+<table>
+    <tr>
+        <td>Number n:</td>
+        <td>
+            <input style="text-align:right" @bind="num"/>
+        </td>
+    
+    
+  
+        <td style="text-align:center" colspan="2">
+            <button @onclick="SumWhile">Sum While</button> &nbsp; 
+        </td>
+    
+    
+        <td>Result:</td>
+        <td><input style="text-align:right" @bind="result"/></td>
+    </tr>
+ </table> 
+ 
+ <table>
+    <tr>
+        <td>Number n:</td>
+        <td>
+            <input style="text-align:right" @bind="num"/>
+        </td>
+    
+    
+  
+        <td style="text-align:center" colspan="2">
+            <button @onclick="SumFor">Sum For</button> &nbsp; 
+        </td>
+    
+    
+        <td>Result:</td>
+        <td><input style="text-align:right" @bind="result"/></td>
+    </tr>
+ </table> 
+ 
+ <table>
+    <tr>
+        <td>Number n:</td>
+        <td>
+            <input style="text-align:right" @bind="num"/>
+        </td>
+    
+    
+  
+        <td style="text-align:center" colspan="2">
+            <button @onclick="SumDoWhile">Sum Do While</button> &nbsp; 
+        </td>
+    
+    
+        <td>Result:</td>
+        <td><input style="text-align:right" @bind="result"/></td>
+    </tr>
+ </table> 
+<br/>
+
+@code {
+
+    private int num = 10;
+
+    private long result = 55;
+
+    private void SumWhile()
+    {
+        Console.WriteLine("Number" + num);
+        Console.WriteLine("SumWhile");
+        result = Mathematics.SumWhile(num);
+        System.Console.WriteLine("Result: " + result);
+        System.Console.WriteLine();
+    }
+ private void SumFor()
+    {
+        Console.WriteLine("Number" + num);
+        Console.WriteLine("SumFor");
+        result = Mathematics.SumFor(num);
+        System.Console.WriteLine("Result: " + result);
+        System.Console.WriteLine();
+    }
+ private void SumDoWhile()
+    {
+        Console.WriteLine("Number" + num);
+        Console.WriteLine("SumDoWhile");
+        result = Mathematics.SumDoWhile(num);
+        System.Console.WriteLine("Result: " + result);
+        System.Console.WriteLine();
+    }
+}
+
