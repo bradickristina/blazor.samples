@@ -1,0 +1,72 @@
+﻿@page "/0504DoubleFact"
+@using DSS.Helpers;
+
+<PageTitle>Double Factorial</PageTitle>
+<h1>Double Fact Function</h1>
+<br/>
+<table>
+    <tr>
+        <td>Argument:</td>
+        <td>
+            <input style="text-align:right" @bind="num"/>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center" colspan="=2">
+            <button @onclick="WhileDoubleFact">While Double Factorial</button> &nbsp; 
+        </td>
+
+    <td>Result:</td>
+        <td><input style="text-align:right" @bind="result"/></td>
+     
+     
+        <td style="text-align:center" colspan="=2">
+            <button @onclick="DoWhileDoubleFact">DoWhile Double Factorial</button> &nbsp; 
+        </td>
+
+    <td>Result:</td>
+        <td><input style="text-align:right" @bind="result"/></td>
+         
+        
+        <td style="text-align:center" colspan="=2">
+            <button @onclick="ForDoubleFact">For Double Factorial</button> &nbsp; 
+        </td>
+
+    <td>Result:</td>
+        <td><input style="text-align:right" @bind="result"/></td>
+    </tr>
+ </table> 
+<br/>
+
+@code {
+
+    public int num = 5 ;
+
+    public long result = 15;
+
+    public void WhileDoubleFact()
+    {
+        Console.WriteLine("WhileDoubleFact");
+        Console.WriteLine("Argument: " + num);
+        result = DSS.Helpers.Mathematics.WhileDoubleFact(num);
+        System.Console.WriteLine("Result: " + result);
+        System.Console.WriteLine();
+    }
+ public void DoWhileDoubleFact()
+    {
+        Console.WriteLine("DoWhileDoubleFact");
+        Console.WriteLine("Argument: " + num);
+        result = DSS.Helpers.Mathematics.DoWhileDoubleFact(num);
+        System.Console.WriteLine("Result: " + result);
+        System.Console.WriteLine();
+    }
+     public void ForDoubleFact()
+    {
+        Console.WriteLine("ForDoubleFact");
+        Console.WriteLine("Argument: " + num);
+        result = DSS.Helpers.Mathematics.ForDoubleFact(num);
+        System.Console.WriteLine("Result: " + result);
+        System.Console.WriteLine();
+    }
+}
+
