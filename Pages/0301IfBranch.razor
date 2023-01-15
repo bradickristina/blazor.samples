@@ -102,56 +102,18 @@ public void avarage()
     
 }
  public void closest() {
-    double avg= ( x + y + z + w + k)/5;
-    double diff=Math.Abs((x + y + z + w + k)/5 - x);
-    double closest = x; 
-    if(Math.Abs(( x + y + z + w + k)/5 - y) <diff)  {
-        closest=y;
-        diff=Math.Abs((x + y + z + w + k)/5 - y);
-    }
-    if(Math.Abs(( x + y + z + w + k)/5 - z) <diff) {
-        closest=z;
-        diff=Math.Abs((x + y + z + w + k)/5 - z);
-    }
-    if ( Math.Abs(( x + y + z + w + k)/5 - w) <diff) {
-        closest=w;
-        diff=Math.Abs((x + y + z + w + k)/5 - w);
-    }
-    if( Math.Abs(( x + y + z + w + k)/5 - k)< diff) {
-        closest=k;
-        
-    }
-    result= closest;
-     }
+    double[] arr = {x, y, z, w, k};
+    result = DSS.Helpers.NewBaseType.ClosestToAvg(arr);
+}
 public void nolower() {
-double avg= ( x + y + z + w + k)/5;
-int nolower= 0;
-if(x<avg)
-nolower++;
-if(y<avg)
-nolower++;
-if(z<avg)
-nolower++;
-if(w<avg)
-nolower++;
-if(k<avg)
-nolower++;
-result=nolower;
+    double [] arr = {x, y, z, w, k};
+    result = DSS.Helpers.NewBaseType.numLowerThenAverage(arr);
+
 }
 public void nohigher() {
-double avg= ( x + y + z + w + k)/5;
-int nohigher= 0;
-if(x>avg)
-nohigher++;
-if(y>avg)
-nohigher++;
-if(z>avg)
-nohigher++;
-if(w>avg)
-nohigher++;
-if(k>avg)
-nohigher++;
-result=nohigher;
+    double [] arr = {x, y, z, w, k};
+    result = DSS.Helpers.NewBaseType.numHigherThanAvarage(arr);
+
 }
 
 }
